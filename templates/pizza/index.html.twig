@@ -34,34 +34,15 @@
 
         <img src="{{ asset('images/pizza.jpg')}}" class="img-fluid"  width="1500 px" alt="pita">
     <div class="row gy-3">
-{#        <div class="card" style="width: 18rem;">#}
-{#            <img class="card-img-top" src="{{ asset('images/download.jfif') }}" alt="Card image cap">#}
-{#            <div class="card-body">#}
-{#                <h5 class="card-title"></h5>#}
-{#                <p class="card-text">pizza</p>#}
-{#            </div>#}
-{#        </div>#}
-{#        <div class="card" style="width: 18rem;">#}
-{#            <img class="card-img-top" src="{{ asset('images/download.jfif') }}" alt="Card image cap">#}
-{#            <div class="card-body">#}
-{#                <h5 class="card-title"></h5>#}
-{#                <p class="card-text">pizza</p>#}
-{#            </div>#}
-{#        </div>#}
-{#        <div class="card" style="width: 18rem;">#}
-{#            <img class="card-img-top" src="{{ asset('images/download.jfif') }}" alt="Card image cap">#}
-{#            <div class="card-body">#}
-{#                <h5 class="card-title"></h5>#}
-{#                <p class="card-text">pizza</p>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
+
         {% for cat in cats %}
         <div class="col-sm-3">
             <div class="card">
                 <div class="card-body text-center">
+                    <a style="color: inherit; text-decoration: none" href="{{ path('pizza',{id:cat.id}) }}">
                     <img alt="no image" class="product-img img-fluid center-block" src="{{ asset(cat.image) }}">
                     <div class="card-title mb-3">{{ cat.name }}</div>
+                    </a>
                 </div>
             </div>
     </div>

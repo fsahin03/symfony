@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {%  for pizza in pizzas %}
+    {{ pizza.name }}
+        {{ pizza.image }}
+    {% endfor %}
+{% endblock %}
