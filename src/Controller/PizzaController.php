@@ -26,17 +26,32 @@ class PizzaController extends AbstractController
     /**
      * @Route ("/pizza/{id}" , name="pizza")
      */
-//    function pizza(EntityManagerInterface $em, $id){
-//        $pizzas = $em->getRepository(Pizza::class)->findBy(['category_id'=>$id]);
-//        dd($pizzas);
-//        //return $this->render('pizza/pizza.html.twig',['pizza'=>$pizza]);
-//    }
+    //    function pizza(EntityManagerInterface $em, $id){
+    //        $pizzas = $em->getRepository(Pizza::class)->findBy(['category_id'=>$id]);
+    //        dd($pizzas);
+    //        //return $this->render('pizza/pizza.html.twig',['pizza'=>$pizza]);
+    //    }
 
-public function pizza(EntityManagerInterface $em, $id)
-{
-    $category=$em->getRepository(Category::class)->find($id);
-    $pizzas=$category->getPizzas();
-    return $this->render('pizza/pizza.html.twig',['pizzas'=>$pizzas]);
-}
+    public function pizza(EntityManagerInterface $em, $id)
+    {
+        $category=$em->getRepository(Category::class)->find($id);
+        $pizzas=$category->getPizzas();
+        return $this->render('pizza/pizza.html.twig',['pizzas'=>$pizzas]);
+    }
 
+    /**
+     * @Route ("/order/{id}" , name="order")
+     */
+    //    function pizza(EntityManagerInterface $em, $id){
+    //        $pizzas = $em->getRepository(Pizza::class)->findBy(['category_id'=>$id]);
+    //        dd($pizzas);
+    //        //return $this->render('pizza/pizza.html.twig',['pizza'=>$pizza]);
+    //    }
+
+    public function order(EntityManagerInterface $em, $id)
+    {
+        $category=$em->getRepository(Category::class)->find($id);
+        $pizzas=$category->getPizzas();
+        return $this->render('pizza/order.html.twig',['pizzas'=>$pizzas]);
+    }
 }

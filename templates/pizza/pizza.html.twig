@@ -2,6 +2,6 @@
 {% block body %}
     {%  for pizza in pizzas %}
     {{ pizza.name }}
-        {{ pizza.image }}
+        <a href="{{ path('order',{ id:pizza.id }) }}"><img src="../{{ pizza.image }}" alt="pizza"></a>
     {% endfor %}
 {% endblock %}
