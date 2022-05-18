@@ -57,6 +57,9 @@ class PizzaController extends AbstractController
         $form = $this->createFormBuilder($order)
             ->add("fname", TextType::class, ['label' => 'Voornaam'])
             ->add("sname", TextType::class, ['label' =>'Achternaam'])
+            ->add("address", TextType::class, ['label'=>'adres'])
+            ->add("city", TextType::class,['label'=>'stad'])
+            ->add("zipcode",TextType::class,['label'=>"postcode"])
             ->add('save', SubmitType::class, ['label' => 'Verzenden'])
             ->getForm();
 
@@ -66,6 +69,7 @@ class PizzaController extends AbstractController
             $order = $form->getData();
 
             $orderRepository->add($order);
+            print("Bedankt voor uw bestelling");
 
         }
 

@@ -1,7 +1,16 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+
+    <div class="row gy-3">
     {%  for pizza in pizzas %}
-    {{ pizza.name }}
-        <a href="{{ path('order',{ id:pizza.id }) }}"><img src="../{{ pizza.image }}" alt="pizza"></a>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top"><img src="../{{ pizza.image }}" alt="pizza">
+            <div class="card-body">
+                <h5 class="card-title">{{ pizza.name }}</h5>
+                <p class="card-text">{{ pizza.price }}</p>
+                <a href="{{ path('order',{ id:pizza.id }) }}" class="btn btn-primary">order</a>
+            </div>
+        </div>
     {% endfor %}
+    </div>
 {% endblock %}

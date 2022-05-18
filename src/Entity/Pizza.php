@@ -28,6 +28,9 @@ class Pizza
     #[ORM\OneToMany(mappedBy: 'Pizza', targetEntity: Order::class)]
     private $orders;
 
+    #[ORM\Column(type: 'decimal', precision: 10, scale: 2)]
+    private $price;
+
     public function __construct()
     {
         $this->orders = new ArrayCollection();
@@ -102,6 +105,18 @@ class Pizza
                 $order->setPizza(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPrice(): ?string
+    {
+        return $this->price;
+    }
+
+    public function setPrice(string $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }
